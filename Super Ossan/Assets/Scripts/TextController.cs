@@ -6,12 +6,13 @@ using UnityEngine.UI;
 public class TextController : MonoBehaviour {
 
 	public Text text;
+	public ScreenManager screenManager;
 
 	private States myState;
 	private bool chocolateEquipped;
 
 	private enum States {
-		street, trash, club, win, gameover
+		street, trash, club
 	}
 
 	void Start () {
@@ -27,8 +28,6 @@ public class TextController : MonoBehaviour {
 		if 		(myState == States.street) 		{ street(); }
 		else if (myState == States.trash)	 	{ trash(); }
 		else if (myState == States.club) 		{ club(); }
-		else if (myState == States.win) 		{ win(); }
-		else if (myState == States.gameover)	{ gameover(); }
 	}
 
 	#region Trash handler methods
@@ -73,11 +72,11 @@ public class TextController : MonoBehaviour {
 					"Momo-chan: Did you bring me a present? you promised last time you came!\n\n";
 		if (chocolateEquipped) {
 			text.text += "Press G to give your chocolate, or F to say you forgot.";
-			if 		(Input.GetKeyDown (KeyCode.G)) { myState = States.win; }
-			else if (Input.GetKeyDown (KeyCode.F)) { myState = States.gameover; }
+			if 		(Input.GetKeyDown (KeyCode.G)) { screenManager.LoadScene("Win"); }
+			else if (Input.GetKeyDown (KeyCode.F)) { screenManager.LoadScene("Lose"); }
 		} else {
 			text.text += "Press F to say you forgot.";
-			if (Input.GetKeyDown (KeyCode.F)) { myState = States.gameover; }
+			if (Input.GetKeyDown (KeyCode.F)) { screenManager.LoadScene("Lose"); }
 		}
 	}
 	#endregion
