@@ -5,25 +5,15 @@ using UnityEngine.UI;
 
 public class StageManager : MonoBehaviour {
 
+	public Stage stage;
 	public Text text;
 	public Text[] options;
 
-	// Use this for initialization
-	void Start () {
-	}
-	
-	// Update is called once per frame
 	void Update () {
-		
-	}
-
-	public void SetText (string text) {
-		this.text.text = text;
-	}
-
-	public void SetOptions (string[] options) {
+		Script script = stage.GetScript ();
+		text.text = script.text;
 		for (int i = 0; i < options.Length; i++) {
-			this.options[i].text = options[i];
+			options[i].text = i < script.options.Length ? script.options[i] : "";
 		}
 	}
 }
