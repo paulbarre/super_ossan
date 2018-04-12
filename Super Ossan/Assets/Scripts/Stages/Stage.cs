@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [System.Serializable]
-public struct Script {
+public struct NamedScript {
 	public string name;
 	[TextArea]
 	public string text;
@@ -13,16 +13,19 @@ public struct Script {
 
 public abstract class Stage : MonoBehaviour {
 
-	public Script[] scripts;
+	public NamedScript[] scripts;
 
-	private Script script;
+	private NamedScript script;
 
-	public Script GetScript () {
+	void Start () {
+	}
+
+	public NamedScript GetScript () {
 		return script;
 	}
 
 	protected void LoadScript (string name) {
-		foreach (Script script in scripts) {
+		foreach (NamedScript script in scripts) {
 			if (script.name == name) {
 				this.script = script;
 				break;
@@ -32,4 +35,6 @@ public abstract class Stage : MonoBehaviour {
 			Debug.LogError ("Script not found: " + name);
 		}
 	}
+
+	public abstract void OptionSelected (int option);
 }
