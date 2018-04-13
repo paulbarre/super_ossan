@@ -8,9 +8,11 @@ public class TrashStage : Stage {
 		trash_0, trash_1
 	};
 	private States state;
+	private Player player;
 	
 	void Awake () {
-		ChangeState (States.trash_0);
+		player = GameObject.FindObjectOfType<Player> ();
+		ChangeState (!player.hasChocolate ? States.trash_0 : States.trash_1);
 	}
 
 	public override void OptionSelected (int option) {
@@ -25,7 +27,10 @@ public class TrashStage : Stage {
 
 	void trash_0 (int option) {
 		if 		(option == 0) { GameObject.FindObjectOfType<StageManager> ().LoadStage ("street"); }
-		else if (option == 1) { ChangeState (States.trash_1); }
+		else if (option == 1) { 
+			GameObject.FindObjectOfType<Player> ().hasChocolate = true;
+			ChangeState (States.trash_1); 
+		}
 	}
 
 	void trash_1 (int option) {

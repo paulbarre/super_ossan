@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scripts:
-  - name: club
+  - name: club_0
     text: 'You are entering the club! Hopefully Momo-chan was not talking to any customer.
 
       Laughing, drinking, you are having fun with this beautiful girl!
@@ -61,3 +61,13 @@ MonoBehaviour:
       Momo-chan: Did you bring me a present? you promised last time you came!'
     options:
     - I forgot!!
+  - name: club_1
+    text: 'You are entering the club! Hopefully Momo-chan was not talking to any customer.
+
+      Laughing, drinking, you are having fun with this beautiful girl!
+
+
+      Momo-chan: Did you bring me a present? you promised last time you came!'
+    options:
+    - I forgot!!
+    - Give the chocolates
