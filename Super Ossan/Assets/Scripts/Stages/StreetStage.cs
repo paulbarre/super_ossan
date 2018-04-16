@@ -12,5 +12,6 @@ public class StreetStage : Stage {
 		StageManager stageManager = GameObject.FindObjectOfType<StageManager> ();
 		if 		(option == 0) { stageManager.LoadStage ("club"); }
 		else if (option == 1) { stageManager.LoadStage ("trash"); }
+		else if (option == 2) { stageManager.LoadStage ("karaoke"); }
 	}
 }
