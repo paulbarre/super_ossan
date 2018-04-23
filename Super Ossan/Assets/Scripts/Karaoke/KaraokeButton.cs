@@ -1,13 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class Karaoke : MonoBehaviour {
+public class KaraokeButton : MonoBehaviour {
 
-	public Text score;
-
-	private int points = 0;
+	public float speed = 3.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -15,7 +12,7 @@ public class Karaoke : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		score.text = "Score: " + points;
+	void Update () {		
+		transform.position += Vector3.left * speed * Time.deltaTime;
 	}
 }

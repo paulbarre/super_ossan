@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 61485354208687122}
   - component: {fileID: 50864994377144120}
   m_Layer: 0
-  m_Name: KaraokeButton
+  m_Name: A_Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  triggerCode: 97
 --- !u!212 &212083403987889942
 SpriteRenderer:
   m_ObjectHideFlags: 1
