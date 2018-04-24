@@ -9,9 +9,17 @@ public class Karaoke : MonoBehaviour {
 	public GameObject button;
 
 	private Score score;
+	private List<Spawner> spawners;
 
 	void Start () {
 		score = GameObject.FindObjectOfType<Score> ();	
+		spawners = new List<Spawner> ();
+		foreach (Transform child in transform) {
+			Spawner spawner = child.gameObject.GetComponent<Spawner> ();
+			if (spawner) {
+				spawners.Add (spawner);
+			}
+		}
 		InvokeRepeating ("InstantiateButtons", 0, spawningRate);
 	}
 
@@ -27,11 +35,8 @@ public class Karaoke : MonoBehaviour {
 	}
 
 	void InstantiateButtons () {
-		foreach (Transform child in transform) {
-			Spawner spawner = child.gameObject.GetComponent<Spawner> ();
-			if (spawner) {
-				spawner.Spawn ();
-			}
+		foreach (Spawner spawner in spawners) {
+			spawner.Spawn ();
 		}
 	}
 }
