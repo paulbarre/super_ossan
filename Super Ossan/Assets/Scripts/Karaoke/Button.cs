@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KaraokeButton : MonoBehaviour {
+public class Button : MonoBehaviour {
 
 	public float speed = 3.0f;
 

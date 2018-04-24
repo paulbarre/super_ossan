@@ -28,11 +28,10 @@ public class Karaoke : MonoBehaviour {
 
 	void InstantiateButtons () {
 		foreach (Transform child in transform) {
-			InstantiateButton (child);
+			Spawner spawner = child.gameObject.GetComponent<Spawner> ();
+			if (spawner) {
+				spawner.Spawn ();
+			}
 		}
-	}
-
-	void InstantiateButton (Transform parent) {
-		Instantiate (button, parent);
 	}
 }
