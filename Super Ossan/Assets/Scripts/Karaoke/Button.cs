@@ -5,6 +5,7 @@ using UnityEngine;
 public class Button : MonoBehaviour {
 
 	public float speed = 3.0f;
+	public KeyCode trigger;
 
 	// Use this for initialization
 	void Start () {

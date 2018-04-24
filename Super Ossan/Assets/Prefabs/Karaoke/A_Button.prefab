@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  triggerCode: 97
+  trigger: 97
 --- !u!212 &212083403987889942
 SpriteRenderer:
   m_ObjectHideFlags: 1
