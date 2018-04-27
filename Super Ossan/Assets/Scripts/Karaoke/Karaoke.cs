@@ -24,14 +24,7 @@ public class Karaoke : MonoBehaviour {
 	}
 
 	void Update () {
-		if (Input.GetKeyDown (KeyCode.A)) {
-			foreach (Transform child in transform) {
-				foreach (Transform grandchild in child) {
-					Destroy (grandchild.gameObject);
-					score.AddScore (100);
-				}
-			}
-		}
+		
 	}
 
 	void InstantiateButtons () {
